@@ -1,0 +1,179 @@
+CREATE DATABASE travelplanner;
+USE travelplanner;
+CREATE TABLE destination (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    city VARCHAR(50) NOT NULL,
+    tags VARCHAR(200),
+    avg_cost INT,
+    duration_hrs DECIMAL(3,1),
+    rating DECIMAL(2,1),
+    popularity INT,
+    lat DECIMAL(9,6),
+    lon DECIMAL(9,6)
+);
+INSERT INTO destination 
+(name, city, tags, avg_cost, duration_hrs, rating, popularity, lat, lon) VALUES
+('Patalpani Waterfall','Indore','nature,adventure',150,2.5,4.2,90,22.596590,75.801090),
+('Ralamandal Wildlife Sanctuary','Indore','nature,adventure',200,3,4.0,85,22.627870,75.940010),
+('Chappan Dukaan','Indore','food,shopping',300,1,4.5,95,22.717302,75.889371),
+('Treasure Island Mall','Indore','shopping,chill',250,2,4.1,80,22.719597,75.878035),
+('Khajrana Ganesh Temple','Indore','spiritual,culture',0,1,4.8,97,22.744090,75.904030),
+('Sarafa Bazaar','Indore','food,nightlife',200,2,4.7,96,22.718621,75.855480),
+('Pipliyapala Regional Park','Indore','nature,chill',100,2.5,4.3,85,22.692480,75.889650),
+('Bamniya Kund Waterfall','Indore','adventure,nature',250,3.5,4.4,88,22.604701,75.835445);
+
+INSERT INTO destination VALUES
+(NULL,'Marine Drive','Mumbai','chill,romantic,scenic',0,2,4.7,98,18.954340,72.812280),
+(NULL,'Gateway of India','Mumbai','heritage,monument',50,1.5,4.6,96,18.922022,72.834649),
+(NULL,'Juhu Beach','Mumbai','beach,chill,food',100,2.5,4.3,92,19.088300,72.826000),
+(NULL,'Siddhivinayak Temple','Mumbai','spiritual,culture',50,1,4.8,97,19.017750,72.830310),
+(NULL,'Colaba Causeway','Mumbai','shopping,food',300,3,4.5,94,18.918900,72.830500),
+(NULL,'Bandra-Worli Sea Link','Mumbai','scenic,photography',0,1,4.6,93,19.017614,72.817045),
+(NULL,'Essel World','Mumbai','adventure,fun',1200,5,4.4,89,19.040340,72.829630),
+(NULL,'Haji Ali Dargah','Mumbai','spiritual,heritage',50,1.5,4.5,90,18.982200,72.808000);
+
+INSERT INTO destination VALUES
+(NULL,'Baga Beach','Goa','beach,party,adventure',200,3,4.6,97,15.552010,73.757770),
+(NULL,'Calangute Beach','Goa','beach,scenic',150,2.5,4.5,95,15.543900,73.755500),
+(NULL,'Fort Aguada','Goa','heritage,scenic',100,2,4.4,90,15.492045,73.827798),
+(NULL,'Candolim Beach','Goa','chill,beach',150,3,4.3,88,15.516330,73.762030),
+(NULL,'Chapora Fort','Goa','heritage,photography',50,2,4.4,91,15.606100,73.741800),
+(NULL,'Dudhsagar Waterfall','Goa','nature,adventure',300,4,4.8,97,15.314300,74.314900),
+(NULL,'Anjuna Flea Market','Goa','shopping,culture',200,3,4.2,87,15.574600,73.744800),
+(NULL,'Vagator Beach','Goa','beach,chill',100,2.5,4.3,89,15.602000,73.739100);
+
+
+INSERT INTO destination VALUES
+(NULL,'Hawa Mahal','Jaipur','heritage,monument,culture',100,1,4.6,94,26.923936,75.826744),
+(NULL,'Amber Fort','Jaipur','heritage,adventure,culture',200,3,4.8,97,26.985486,75.851345),
+(NULL,'City Palace','Jaipur','heritage,culture',300,2,4.5,92,26.926028,75.823675),
+(NULL,'Jal Mahal','Jaipur','scenic,photography',50,1,4.4,89,26.953361,75.846037),
+(NULL,'Nahargarh Fort','Jaipur','heritage,adventure',200,3,4.6,94,26.936294,75.808375),
+(NULL,'Albert Hall Museum','Jaipur','museum,heritage',150,2,4.4,90,26.912403,75.815725),
+(NULL,'Johari Bazaar','Jaipur','shopping,culture',250,3,4.3,88,26.917470,75.820000),
+(NULL,'Birla Mandir','Jaipur','spiritual,culture',50,1,4.5,92,26.905600,75.797300);
+
+INSERT INTO destination VALUES
+(NULL,'India Gate','Delhi','monument,heritage,chill',0,1,4.7,97,28.612912,77.229508),
+(NULL,'Red Fort','Delhi','heritage,monument',200,3,4.5,93,28.656200,77.241000),
+(NULL,'Qutub Minar','Delhi','heritage,monument',150,2,4.6,95,28.524428,77.185455),
+(NULL,'Lotus Temple','Delhi','spiritual,architecture',0,1.5,4.5,92,28.553492,77.258826),
+(NULL,'Sarojini Nagar Market','Delhi','shopping,food',300,3,4.2,88,28.574331,77.200953),
+(NULL,'Akshardham Temple','Delhi','spiritual,culture',100,3.5,4.8,98,28.612673,77.277262),
+(NULL,'Hauz Khas Village','Delhi','nightlife,food,chill',400,3,4.4,90,28.553030,77.192600),
+(NULL,'National Museum','Delhi','museum,culture',200,2.5,4.3,85,28.612673,77.229509);
+
+
+INSERT INTO destination VALUES
+(NULL,'Lalbagh Botanical Garden','Bangalore','nature,chill',50,2,4.5,92,12.950743,77.584777),
+(NULL,'Cubbon Park','Bangalore','nature,chill',0,1.5,4.6,94,12.976347,77.592928),
+(NULL,'UB City Mall','Bangalore','shopping,luxury',300,3,4.4,89,12.971891,77.595044),
+(NULL,'Wonderla Amusement Park','Bangalore','adventure,thrill',1200,6,4.7,98,12.834490,77.401310),
+(NULL,'Vidhana Soudha','Bangalore','heritage,architecture',0,1,4.3,85,12.979700,77.590700),
+(NULL,'Commercial Street','Bangalore','shopping,food',250,3,4.2,88,12.978369,77.608846),
+(NULL,'ISKCON Temple','Bangalore','spiritual,culture',50,1.5,4.7,95,13.009391,77.551079),
+(NULL,'Bannerghatta Biological Park','Bangalore','nature,adventure',400,4,4.5,90,12.800000,77.577900);
+
+
+INSERT INTO destination VALUES
+(NULL,'Charminar','Hyderabad','heritage,monument,shopping',50,2,4.6,95,17.361648,78.474655),
+(NULL,'Golconda Fort','Hyderabad','heritage,adventure',200,3,4.5,92,17.383309,78.401055),
+(NULL,'Ramoji Film City','Hyderabad','fun,themepark,chill',1350,6,4.8,98,17.254300,78.682300),
+(NULL,'Hussain Sagar Lake','Hyderabad','scenic,chill',100,2,4.3,88,17.423858,78.473789),
+(NULL,'Birla Mandir','Hyderabad','spiritual,culture',0,1,4.6,94,17.406238,78.469155),
+(NULL,'Nehru Zoological Park','Hyderabad','nature,animals',200,3.5,4.4,89,17.350632,78.451325),
+(NULL,'Laad Bazaar','Hyderabad','shopping,culture',250,3,4.2,87,17.357500,78.474000),
+(NULL,'Taramati Baradari','Hyderabad','heritage,photography',150,2,4.1,82,17.324900,78.332500);
+
+
+INSERT INTO destination VALUES
+(NULL,'Victoria Memorial','Kolkata','heritage,monument,scenic',200,2.5,4.7,96,22.544808,88.342557),
+(NULL,'Howrah Bridge','Kolkata','scenic,photography',0,1,4.5,94,22.585000,88.346800),
+(NULL,'Park Street','Kolkata','food,nightlife,chill',400,3,4.6,92,22.552300,88.352100),
+(NULL,'Indian Museum','Kolkata','museum,culture',150,2,4.4,89,22.565750,88.351200),
+(NULL,'Eco Park','Kolkata','nature,chill',200,3,4.5,93,22.624800,88.449400),
+(NULL,'Dakshineswar Temple','Kolkata','spiritual,culture',0,2,4.7,95,22.655800,88.359300),
+(NULL,'Science City','Kolkata','science,fun,education',250,3,4.3,88,22.541200,88.395700),
+(NULL,'Prinsep Ghat','Kolkata','scenic,romantic',50,1.5,4.6,90,22.546700,88.337400);
+
+INSERT INTO destination
+(name, city, tags, avg_cost, duration_hrs, rating, popularity, lat, lon)
+VALUES
+
+-- 🌊 Adventure & Nature (12)
+('Patalpani Waterfall', 'Indore', 'nature,adventure,waterfall', 150, 2.5, 4.5, 95, 22.59659, 75.80109),
+('Tincha Falls', 'Indore', 'nature,adventure,waterfall', 100, 2.5, 4.4, 90, 22.61290, 75.94460),
+('Bamniya Kund Waterfall', 'Indore', 'nature,adventure,waterfall', 200, 3.5, 4.4, 85, 22.60470, 75.83544),
+('Ralamandal Wildlife Sanctuary', 'Indore', 'nature,adventure,wildlife', 200, 3.0, 4.3, 88, 22.62787, 75.94001),
+('Janapav Kuti', 'Indore', 'nature,hill,trek', 100, 3.0, 4.5, 87, 22.45760, 75.69390),
+('Gulawat Lotus Valley', 'Indore', 'nature,lake,photography', 100, 2.5, 4.6, 89, 22.63990, 75.87620),
+('Sirpur Lake', 'Indore', 'nature,lake,chill', 50, 2.0, 4.2, 82, 22.66030, 75.84730),
+('Choral Dam', 'Indore', 'nature,scenic,outdoor', 150, 3.0, 4.4, 85, 22.41680, 75.74810),
+('Yashwant Sagar Dam', 'Indore', 'nature,lake,birds', 100, 2.0, 4.3, 83, 22.70720, 75.80410),
+('Mohadi Falls', 'Indore', 'nature,waterfall,trek', 80, 2.0, 4.1, 75, 22.59050, 75.98030),
+('Patalpani View Point', 'Indore', 'nature,viewpoint,photography', 50, 1.5, 4.4, 80, 22.59820, 75.80340),
+('Ralamandal View Point', 'Indore', 'nature,viewpoint,photography', 50, 1.5, 4.3, 78, 22.62910, 75.94180),
+
+-- 🌳 Parks & Gardens (12)
+('Regional Park (Pipliyapala)', 'Indore', 'park,nature,chill', 100, 2.5, 4.4, 90, 22.69248, 75.88965),
+('Meghdoot Garden', 'Indore', 'park,nature,chill', 50, 1.5, 4.3, 85, 22.75325, 75.89528),
+('Nehru Park', 'Indore', 'park,chill,nature', 40, 1.0, 4.2, 80, 22.71960, 75.85770),
+('Atal Bihari Vajpayee Regional Park', 'Indore', 'park,lake,nature', 100, 2.0, 4.4, 88, 22.69190, 75.88910),
+('Crescent Water Park', 'Indore', 'park,waterpark,fun', 800, 5.0, 4.2, 84, 22.76840, 75.84960),
+('Safari Adventure Park', 'Indore', 'park,adventure,fun', 600, 4.0, 4.1, 82, 22.77620, 75.90210),
+('Nakhrali Dhani', 'Indore', 'park,culture,fun', 700, 4.0, 4.3, 86, 22.73090, 75.81350),
+('Lotus Valley Park', 'Indore', 'park,nature,photography', 60, 1.5, 4.2, 78, 22.64120, 75.87490),
+('Meghdoot Upvan', 'Indore', 'park,chill,nature', 40, 1.0, 4.1, 75, 22.75210, 75.89380),
+('Children Traffic Park', 'Indore', 'park,kids,education', 30, 1.0, 4.0, 72, 22.72150, 75.88330),
+('Dream World Water Park', 'Indore', 'park,waterpark,fun', 700, 5.0, 4.0, 80, 22.77690, 75.90630),
+('Sirpur Eco Park', 'Indore', 'park,nature,eco', 50, 1.5, 4.1, 74, 22.65920, 75.84620),
+
+-- 🛕 Temples & Spiritual (14)
+('Khajrana Ganesh Temple', 'Indore', 'spiritual,temple,culture', 0, 1.0, 4.8, 98, 22.74409, 75.90403),
+('Annapurna Temple', 'Indore', 'spiritual,temple,culture', 0, 1.0, 4.6, 94, 22.70430, 75.85880),
+('Bada Ganpati', 'Indore', 'spiritual,temple,culture', 0, 0.75, 4.7, 96, 22.71640, 75.84650),
+('Gommatgiri', 'Indore', 'spiritual,hill,viewpoint', 50, 2.0, 4.5, 89, 22.67500, 75.84080),
+('Bijasan Mata Temple', 'Indore', 'spiritual,hill,temple', 50, 2.0, 4.4, 88, 22.72590, 75.88140),
+('ISKCON Indore', 'Indore', 'spiritual,temple,culture', 0, 1.5, 4.6, 92, 22.75420, 75.90360),
+('Kanch Mandir', 'Indore', 'spiritual,architecture', 20, 0.75, 4.5, 90, 22.71720, 75.84720),
+('Khajrana Dargah', 'Indore', 'spiritual,culture', 0, 1.0, 4.4, 85, 22.74330, 75.90490),
+('Hatod Jain Temple', 'Indore', 'spiritual,temple', 0, 1.0, 4.3, 78, 22.70360, 75.82240),
+('Pitra Parvat', 'Indore', 'spiritual,hill,viewpoint', 50, 2.0, 4.4, 86, 22.70520, 75.91040),
+
+-- 🏛 Heritage & Culture (12)
+('Rajwada Palace', 'Indore', 'heritage,history,culture', 50, 1.5, 4.5, 97, 22.71790, 75.85520),
+('Lal Bagh Palace', 'Indore', 'heritage,history,museum', 150, 2.0, 4.6, 93, 22.70330, 75.86610),
+('Central Museum', 'Indore', 'museum,history,culture', 100, 1.5, 4.3, 85, 22.71810, 75.85590),
+('Krishnapura Chhatris', 'Indore', 'heritage,architecture,history', 50, 1.0, 4.4, 88, 22.71690, 75.85260),
+('Gandhi Hall', 'Indore', 'heritage,architecture,culture', 50, 1.0, 4.2, 82, 22.71930, 75.85790),
+('Holkar Cricket Stadium', 'Indore', 'sports,landmark', 100, 1.5, 4.4, 90, 22.72760, 75.87210),
+('Indore Zoo', 'Indore', 'zoo,animals,fun', 100, 2.5, 4.3, 88, 22.71980, 75.85500),
+('Nehru Stadium', 'Indore', 'sports,landmark', 50, 1.0, 4.1, 78, 22.72060, 75.85890),
+
+-- 🍽 Food, Markets & Malls (18)
+('Chappan Dukaan', 'Indore', 'food,streetfood,local', 300, 1.0, 4.6, 98, 22.71730, 75.88937),
+('Sarafa Bazaar', 'Indore', 'food,streetfood,nightlife', 250, 2.0, 4.7, 99, 22.71862, 75.85548),
+('MT Cloth Market', 'Indore', 'shopping,market,local', 200, 1.5, 4.3, 90, 22.71780, 75.85430),
+('Kothari Market', 'Indore', 'shopping,market', 200, 1.5, 4.2, 88, 22.71610, 75.85340),
+('Sitlamata Bazaar', 'Indore', 'shopping,market,local', 150, 1.0, 4.1, 85, 22.71670, 75.84890),
+('Novelty Market', 'Indore', 'shopping,market', 150, 1.0, 4.0, 80, 22.71800, 75.85040),
+('Treasure Island Mall', 'Indore', 'shopping,mall,chill', 250, 2.0, 4.2, 88, 22.71960, 75.87803),
+('C21 Mall', 'Indore', 'shopping,mall,chill', 300, 2.0, 4.4, 92, 22.75360, 75.89310),
+('Malhar Mega Mall', 'Indore', 'shopping,mall', 250, 2.0, 4.1, 85, 22.71990, 75.88140),
+('Apollo Premier', 'Indore', 'food,restaurant', 600, 2.0, 4.5, 90, 22.74680, 75.90140),
+('Nafees Restaurant', 'Indore', 'food,restaurant', 500, 1.5, 4.4, 88, 22.71790, 75.88620),
+('Shreemaya Celebration', 'Indore', 'food,restaurant', 600, 2.0, 4.5, 92, 22.72050, 75.88840),
+('Mr Beans Cafe', 'Indore', 'food,cafe', 350, 1.5, 4.3, 86, 22.72210, 75.88990),
+('Cafe Terazza', 'Indore', 'food,cafe', 400, 1.5, 4.4, 87, 22.75390, 75.89760),
+('Hobnob Gourmet Cafe', 'Indore', 'food,cafe', 450, 1.5, 4.4, 88, 22.72450, 75.89010),
+('Johnny Hot Dog', 'Indore', 'food,streetfood', 150, 0.75, 4.6, 95, 22.71700, 75.85290),
+('Apna Sweets', 'Indore', 'food,sweets', 200, 1.0, 4.5, 94, 22.72130, 75.88440),
+('Oye Papaji', 'Indore', 'food,restaurant', 350, 1.5, 4.3, 86, 22.71840, 75.88720);
+
+
+SELECT COUNT(*) FROM destination WHERE city = 'Indore';
+
+SELECT id, name, city FROM destination ORDER BY id;
+
+
