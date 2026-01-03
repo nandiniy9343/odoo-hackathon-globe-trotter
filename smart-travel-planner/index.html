@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en" style="scroll-behavior: smooth;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartTravel | Next Gen Planning</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="logo">SmartTravel.</div>
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="planner.html">Planner</a></li>
+        <li><a href="destinations.html">Destinations</a></li>
+        <li><a href="itinerary.html">Itinerary</a></li> <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<section class="hero">
+    <div class="hero-content">
+        <h1>Travel Beyond <br> Boundaries</h1>
+        <p>AI-powered itineraries curated for your budget and style.</p>
+
+        <form action="planner.html" method="GET">
+            <div class="quick-planner-widget">
+                <div class="input-group">
+                    <select name="type" required>
+                        <option value="" disabled selected>Destination Type</option>
+                        <option value="Beach">🏖️ Beach</option>
+                        <option value="Mountain">🏔️ Mountain</option>
+                        <option value="City">🏙️ Urban</option>
+                        <option value="Adventure">🧗 Adventure</option>
+                    </select>
+                    <input type="number" name="budget" placeholder="Max Budget (₹)" required>
+                    <button type="submit" class="btn-search">Explore Now</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+
+<section class="section-padding">
+    <h2 class="section-title">Curated <span>Collections</span></h2>
+
+    <div class="interest-cards">
+        <a href="destinations.html?type=beach" class="interest-card">
+            <img src="images/beach.jpg" alt="Beach">
+            <div class="overlay">Seaside Escapes</div>
+        </a>
+        <a href="destinations.html?type=mountain" class="interest-card">
+            <img src="images/mountain.jpg" alt="Mountain">
+            <div class="overlay">High Altitudes</div>
+        </a>
+        <a href="destinations.html?type=city" class="interest-card">
+            <img src="images/city.jpg" alt="City">
+            <div class="overlay">Urban Culture</div>
+        </a>
+        <a href="destinations.html?type=adventure" class="interest-card">
+            <img src="images/adventure.jpg" alt="Adventure">
+            <div class="overlay">Adrenaline Rush</div>
+        </a>
+        <a href="destinations.html?type=nationalpark" class="interest-card">
+            <img src="images/nationalpark.jpg" alt="National Parks">
+            <div class="overlay">Wildlife Safari</div>
+        </a>
+        <a href="destinations.html?type=spiritual" class="interest-card">
+            <img src="images/spiritual.jpg" alt="Spiritual">
+            <div class="overlay">Spiritual Journey</div>
+        </a>
+    </div>
+</section>
+
+<section id="about" class="section-padding" style="background: white;">
+    <h2 class="section-title">Who We <span>Are</span></h2>
+    <div class="about-wrapper">
+        <div class="about-text">
+            <h3 style="font-size: 2rem; margin-bottom: 20px; color: var(--text-main);">Redefining How You Travel</h3>
+            <p style="color: var(--text-muted); margin-bottom: 20px; line-height: 1.8;">
+                SmartTravel combines advanced AI technology with real-world travel data to build personalized itineraries
+                that fit your budget, timeline, and interests perfectly.
+            </p>
+            <ul class="about-list">
+                <li><i class="fas fa-check-circle"></i> AI-Driven Budget Optimization</li>
+                <li><i class="fas fa-check-circle"></i> Real-time Weather Integration</li>
+                <li><i class="fas fa-check-circle"></i> Seamless Group Expense Splitting</li>
+            </ul>
+        </div>
+        <div class="stats-grid">
+            <div class="stat-card">
+                <i class="fas fa-users"></i>
+                <h3>10k+</h3>
+                <p>Happy Travelers</p>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-map-marked-alt"></i>
+                <h3>500+</h3>
+                <p>Destinations</p>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-route"></i>
+                <h3>1M+</h3>
+                <p>Itineraries</p>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-star"></i>
+                <h3>4.9</h3>
+                <p>User Rating</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section-padding">
+    <h2 class="section-title">Why <span>SmartTravel?</span></h2>
+    <div class="features-container">
+        <details>
+            <summary>🤖 AI-Driven Itineraries</summary>
+            <p>We analyze millions of data points to ensure your trip fits your exact budget and season.</p>
+        </details>
+        <details>
+            <summary>💸 Real-time Expense Tracking</summary>
+            <p>Split bills instantly with friends and keep track of who owes who.</p>
+        </details>
+        <details>
+            <summary>🌍 Hidden Gems Discovery</summary>
+            <p>Go beyond the tourist traps. We show you where the locals actually eat and hang out.</p>
+        </details>
+    </div>
+</section>
+
+<section id="contact" class="section-padding" style="background: #f8f9fa;">
+    <h2 class="section-title">Get in <span>Touch</span></h2>
+
+    <div class="contact-container">
+        <div class="contact-info">
+            <div class="info-box">
+                <i class="fas fa-map-marker-alt"></i>
+                <div>
+                    <h4>Headquarters</h4>
+                    <p>123 Innovation Drive, Tech City, India</p>
+                </div>
+            </div>
+            <div class="info-box">
+                <i class="fas fa-envelope"></i>
+                <div>
+                    <h4>Email Us</h4>
+                    <p>hello@smarttravel.com</p>
+                </div>
+            </div>
+            <div class="info-box">
+                <i class="fas fa-phone-alt"></i>
+                <div>
+                    <h4>Call Support</h4>
+                    <p>+91 98765 43210</p>
+                </div>
+            </div>
+        </div>
+
+        <form class="contact-form form-card">
+            <div class="form-group">
+                <label>Your Name</label>
+                <div class="input-wrapper">
+                    <i class="fas fa-user input-icon"></i>
+                    <input type="text" class="form-control" placeholder="John Doe" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Email Address</label>
+                <div class="input-wrapper">
+                    <i class="fas fa-envelope input-icon"></i>
+                    <input type="email" class="form-control" placeholder="john@example.com" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Message</label>
+                <textarea class="form-control" rows="4" placeholder="How can we help?" required></textarea>
+            </div>
+            <button type="submit" class="btn-contact">Send Message ✈️</button>
+        </form>
+    </div>
+</section>
+
+<footer style="background: #1a1a2e; color: white; padding: 40px 20px; text-align: center; margin-top: 50px;">
+    <p>&copy; 2024 SmartTravel. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

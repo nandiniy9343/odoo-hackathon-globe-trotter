@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Destinations | SmartTravel</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Internal styles for specific filter buttons */
+        .filter-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+        .filter-btn {
+            padding: 10px 25px;
+            border-radius: 50px;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            background: white;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+            color: var(--text-muted);
+        }
+
+        .filter-btn.active,
+        .filter-btn:hover {
+            background: var(--primary-gradient);
+            color: white;
+            border-color: transparent;
+            box-shadow: 0 5px 15px rgba(0, 97, 255, 0.3);
+        }
+
+        .destination-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-soft);
+            transition: transform 0.3s;
+            position: relative;
+        }
+
+        .destination-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-img-holder {
+            height: 200px;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .card-img-holder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.5s;
+        }
+
+        .destination-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .price-tag {
+            background: rgba(230, 240, 255, 0.8);
+            color: #0061ff;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            display: inline-block;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo">SmartTravel.</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="planner.html">Planner</a></li>
+            <li><a href="destinations.html" style="color:#0061ff;">Destinations</a></li>
+            <li><a href="itinerary.html">Itinerary</a></li>
+            <li><a href="group.html">Group</a></li>
+        </ul>
+    </nav>
+
+    <section class="section-padding">
+        <h2 class="section-title">Explore <span>Destinations</span></h2>
+
+        <div class="filter-container">
+            <button class="filter-btn active" onclick="filterSelection('all')">All</button>
+            <button class="filter-btn" onclick="filterSelection('beach')">🏖️ Beaches</button>
+            <button class="filter-btn" onclick="filterSelection('mountain')">🏔️ Mountains</button>
+            <button class="filter-btn" onclick="filterSelection('city')">🏙️ Cities</button>
+            <button class="filter-btn" onclick="filterSelection('adventure')">🧗 Adventure</button>
+            <button class="filter-btn" onclick="filterSelection('spiritual')">🙏 Spiritual</button>
+            <button class="filter-btn" onclick="filterSelection('nationalpark')">🐅 Wildlife</button>
+        </div>
+
+        <div class="destination-grid" id="destGrid">
+
+            <div class="destination-card filter-item" data-type="beach">
+                <div class="card-img-holder"><img src="images/goa.jpg" loading="lazy"></div>
+                <div class="card-content">
+                    <h3>Goa</h3>
+                    <p style="color:#666; font-size:0.9rem;">Beaches • Nightlife • Relax</p>
+                    <span class="price-tag">₹15,000 – ₹25,000</span>
+                </div>
+            </div>
+
+            <div class="destination-card filter-item" data-type="beach">
+                <div class="card-img-holder"><img src="images/gokarna.jpg" loading="lazy"></div>
+                <div class="card-content">
+                    <h3>Gokarna</h3>
+                    <p>Beaches • Spiritual • Calm</p>
+                    <span class="price-tag">₹10,000 – ₹18,000</span>
+                </div>
+            </div>
+
+            <div class="destination-card filter-item" data-type="mountain">
+                <div class="card-img-holder"><img src="images/manali.jpg" loading="lazy"></div>
+                <div class="card-content">
+                    <h3>Manali</h3>
+                    <p>Mountains • Snow • Adventure</p>
+                    <span class="price-tag">₹18,000 – ₹30,000</span>
+                </div>
+            </div>
+
+            <div class="destination-card filter-item" data-type="mountain">
+                <div class="card-img-holder"><img src="images/shimla.jpg" loading="lazy"></div>
+                <div class="card-content">
+                    <h3>Shimla</h3>
+                    <p>Hills • Colonial • Leisure</p>
+                    <span class="price-tag">₹15,000 – ₹25,000</span>
+                </div>
+            </div>
+
+            <div class="destination-card filter-item" data-type="city">
+                <div class="card-img-holder"><img src="images/jaipur.jpg" loading="lazy"></div>
+                <div class="card-content">
+                    <h3>Jaipur</h3>
+                    <p>City • Heritage • Culture</p>
+                    <span class="price-tag">₹12,000 – ₹20,000</span>
+                </div>
+            </div>
+
+            <div class="destination-card filter-item" data-type="city">
+                <div class="card-img-holder"><img src="images/mumbai.jpg" loading="lazy"></div>
+                <div class="card-content">
+                    <h3>Mumbai</h3>
+                    <p>City Life • Beaches • Nightlife</p>
+                    <span class="price-tag">₹12,000 – ₹22,000</span>
+                </div>
+            </div>
+
+            <div class="destination-card filter-item" data-type="adventure">
+                <div class="card-img-holder"><img src="images/rishikesh.jpg" loading="lazy"></div>
+                <div class="card-content">
+                    <h3>Rishikesh</h3>
+                    <p>Rafting • Adventure • Spiritual</p>
+                    <span class="price-tag">₹12,000 – ₹20,000</span>
+                </div>
+            </div>
+
+            <div class="destination-card filter-item" data-type="adventure">
+                <div class="card-img-holder"><img src="images/ladakh.jpg" loading="lazy"></div>
+                <div class="card-content">
+                    <h3>Ladakh</h3>
+                    <p>Biking • Mountains • Extreme</p>
+                    <span class="price-tag">₹30,000 – ₹45,000</span>
+                </div>
+            </div>
+
+            <div class="destination-card filter-item" data-type="spiritual">
+                <div class="card-img-holder"><img src="images/varanasi.jpg" loading="lazy"></div>
+                <div class="card-content">
+                    <h3>Varanasi</h3>
+                    <p>Ghats • Temples • Spiritual</p>
+                    <span class="price-tag">₹8,000 – ₹15,000</span>
+                </div>
+            </div>
+
+            <div class="destination-card filter-item" data-type="nationalpark">
+                <div class="card-img-holder"><img src="images/jimcorbett.jpg" loading="lazy"></div>
+                <div class="card-content">
+                    <h3>Jim Corbett</h3>
+                    <p>Tiger Reserve • Safari</p>
+                    <span class="price-tag">₹15,000 – ₹25,000</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Itinerary | SmartTravel</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Specific Styles for Itinerary Timeline */
+        .itinerary-container {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+            border-left: 3px solid #e0e0e0;
+        }
+
+        .timeline-item {
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -39px;
+            top: 5px;
+            width: 15px;
+            height: 15px;
+            background: var(--primary-gradient);
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px rgba(0, 97, 255, 0.2);
+        }
+
+        .day-card {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: var(--shadow-soft);
+            transition: 0.3s;
+        }
+
+        .day-card:hover { transform: translateX(5px); }
+        .day-header { font-weight: 800; color: #0061ff; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 1px; }
+
+        /* FIXED: High Visibility Info Widget */
+        .info-widget {
+            background: white; /* Changed from Gradient to White */
+            color: #2d3436;    /* Dark Text */
+            padding: 30px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+            box-shadow: var(--shadow-heavy);
+            border: 1px solid #eee;
+            text-align: center;
+        }
+
+        /* Weather Widget */
+        .weather-widget {
+            background: white;
+            padding: 25px;
+            border-radius: 20px;
+            box-shadow: var(--shadow-soft);
+        }
+
+        @media(max-width: 768px) {
+            .itinerary-container { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="logo">SmartTravel.</div>
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="planner.html">Planner</a></li>
+        <li><a href="destinations.html">Destinations</a></li>
+        <li><a href="itinerary.html" style="color:#0061ff;">Itinerary</a></li> <li><a href="group.html">Group</a></li>
+    </ul>
+</nav>
+
+<section class="section-padding">
+    <h2 class="section-title">Your <span>Smart Itinerary</span></h2>
+
+    <div class="itinerary-container">
+
+        <div class="timeline-section">
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="day-card">
+                        <div class="day-header">Day 1: Arrival & Acclimatization</div>
+                        <h3>📍 Land in Manali</h3>
+                        <p>Check-in at The Himalayan Resort. Spend the evening walking through the Pine Forest.</p>
+                        <hr style="margin:15px 0; border:0; border-top:1px solid #eee;">
+                        <p>🍽️ <strong>Dinner:</strong> Johnson's Cafe (Famous for Trout Fish)</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="day-card">
+                        <div class="day-header">Day 2: Adventure Kickoff</div>
+                        <h3>🏔️ Solang Valley</h3>
+                        <p>Head out early for Paragliding and ATV rides. Enjoy the panoramic snow views.</p>
+                        <hr style="margin:15px 0; border:0; border-top:1px solid #eee;">
+                        <p>🚗 <strong>Transit:</strong> Private Cab (30 mins)</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="day-card">
+                        <div class="day-header">Day 3: Cultural Immersion</div>
+                        <h3>🕍 Hadimba Temple & Old Manali</h3>
+                        <p>Visit the ancient wooden temple. Explore the vibrant markets of Old Manali.</p>
+                        <hr style="margin:15px 0; border:0; border-top:1px solid #eee;">
+                        <p>☕ <strong>Spot:</strong> Dylan's Toasted and Roasted Coffee House</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <aside>
+            <div class="info-widget">
+                <h3 style="color:#0061ff;">🛡️ Safety Score</h3>
+                <div style="font-size: 3.5rem; font-weight: 900; color:#2d3436; margin: 10px 0;">9.2<span style="font-size:1.5rem; color:#999;">/10</span></div>
+                <p style="font-weight:600; color:#27ae60;">Safe for families & solo travelers.</p>
+            </div>
+
+            <div class="weather-widget">
+                <h3 style="margin-bottom: 15px; color: #333;">☁️ Weather Forecast</h3>
+                <div style="display:flex; align-items:center; gap:15px; margin-bottom:10px;">
+                    <span style="font-size: 2.5rem;">12°C</span>
+                    <div>
+                        <strong>Partly Cloudy</strong><br>
+                        <small>Humidity: 45%</small>
+                    </div>
+                </div>
+                <p style="color: gray; font-size: 0.9rem;">Pack light woolens and comfortable walking shoes.</p>
+            </div>
+        </aside>
+
+    </div>
+</section>
+
+</body>
+</html>

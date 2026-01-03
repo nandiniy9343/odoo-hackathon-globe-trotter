@@ -1,0 +1,746 @@
+/* IMPORT GOOGLE FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+:root {
+    --primary-color: #0f4c75;   /* Deep Navy */
+    --secondary-color: #3282b8; /* Bright Blue */
+    --accent-color: #0bbe1fa;   /* Light Blue Accent */
+    --teal-color: #38ada9;      /* Teal for Buttons */
+    --text-dark: #1b262c;
+    --text-light: #f5f6fa;
+    --card-bg: #ffffff;
+    --bg-light: #eaf0f6;
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    --glass: rgba(255, 255, 255, 0.95);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif; /* Applied global font */
+}
+
+body {
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+/* ================= NAVBAR ================= */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    background-color: var(--primary-color);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.logo {
+    color: white;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* Search Bar Styling */
+.search-container {
+    position: relative;
+    width: 300px;
+}
+
+.search-container input {
+    width: 100%;
+    padding: 10px 20px;
+    border-radius: 50px;
+    border: none;
+    outline: none;
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+    transition: 0.3s;
+}
+
+.search-container input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.search-container input:focus {
+    background: white;
+    color: var(--text-dark);
+    box-shadow: 0 0 10px rgba(255,255,255,0.3);
+}
+
+/* Nav Links */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    transition: 0.3s;
+    position: relative;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: white;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--teal-color);
+    transition: width 0.3s;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* ================= HERO SECTION ================= */
+.hero {
+    height: 85vh;
+    background: linear-gradient(rgba(15, 76, 117, 0.6), rgba(15, 76, 117, 0.4)),
+    url("images/travel.jpg"); /* Ensure image path is correct */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Parallax effect */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    color: white;
+    margin-bottom: 10px;
+    text-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: #e0e0e0;
+    margin-bottom: 30px;
+    max-width: 600px;
+}
+
+/* Glassmorphism Widget */
+.quick-planner-widget {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    padding: 25px 30px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.quick-planner-widget .input-group {
+    display: flex;
+    gap: 15px;
+}
+
+.quick-planner-widget select,
+.quick-planner-widget input {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    outline: none;
+    min-width: 180px;
+}
+
+/* Buttons */
+.btn {
+    background: linear-gradient(135deg, #38ada9, #079992);
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(56, 173, 169, 0.4);
+}
+
+/* ================= CARDS & GRIDS ================= */
+.interest, .destinations, .planner-section, .group-page, .features {
+    padding: 80px 10%;
+}
+
+h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 50px;
+    color: var(--primary-color);
+    position: relative;
+}
+
+/* Decorative Underline for Headings */
+h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: var(--teal-color);
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+/* Horizontal Scroll Cards (Interest) */
+.interest-cards {
+    display: flex;
+    gap: 25px;
+    overflow-x: auto;
+    padding: 20px 0;
+    scrollbar-width: thin;
+}
+
+.interest-card {
+    min-width: 260px;
+    height: 320px;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.interest-card:hover {
+    transform: translateY(-10px);
+}
+
+.interest-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.interest-card .overlay {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 20px;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+/* Destination Grid */
+.destination-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.destination-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.destination-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+.destination-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.destination-card h3 {
+    margin: 15px 20px 5px;
+    color: var(--primary-color);
+}
+
+.destination-card p {
+    margin: 0 20px;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.destination-card span {
+    display: block;
+    margin: 15px 20px 20px;
+    color: var(--teal-color);
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+/* ================= FORMS & INPUTS ================= */
+.planner-form, .box, .budget-summary {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    max-width: 600px;
+    margin: 0 auto 30px;
+}
+
+label {
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 8px;
+    display: block;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"],
+select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #eee;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+input:focus, select:focus {
+    border-color: var(--secondary-color);
+    outline: none;
+}
+
+/* Range Slider Styling */
+input[type="range"] {
+    width: 100%;
+    margin: 10px 0;
+    accent-color: var(--teal-color);
+}
+
+/* Progress Bar */
+progress {
+    width: 100%;
+    height: 25px;
+    border-radius: 50px;
+    overflow: hidden;
+    margin: 10px 0;
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.1);
+}
+progress::-webkit-progress-bar {
+    background-color: #f0f0f0;
+}
+progress::-webkit-progress-value {
+    background-color: var(--teal-color);
+    border-radius: 0 50px 50px 0;
+}
+
+/* Accordion (FAQ) */
+details {
+    background: white;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
+
+details[open] {
+    border-left: 5px solid var(--teal-color);
+    transform: scale(1.01);
+}
+
+summary {
+    font-weight: 600;
+    font-size: 1.1rem;
+    cursor: pointer;
+    list-style: none;
+    color: var(--primary-color);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    .quick-planner-widget .input-group {
+        flex-direction: column;
+        width: 100%;
+    }
+    .nav-links {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+/* ================= ADD TO BOTTOM OF STYLE.CSS ================= */
+
+/* ABOUT SECTION */
+.about-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.about-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.about-list {
+    list-style: none;
+    margin-top: 20px;
+}
+
+.about-list li {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--text-main);
+    font-weight: 600;
+}
+
+.about-list i {
+    color: #0061ff;
+}
+
+/* Stats Grid */
+.stats-grid {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    min-width: 300px;
+}
+
+.stat-card {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: var(--shadow-soft);
+    transition: transform 0.3s;
+    border: 1px solid #f0f0f0;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.stat-card i {
+    font-size: 2rem;
+    color: #0061ff;
+    margin-bottom: 10px;
+    background: rgba(0, 97, 255, 0.1);
+    padding: 15px;
+    border-radius: 50%;
+}
+
+.stat-card h3 {
+    font-size: 1.8rem;
+    margin: 10px 0 5px;
+    color: var(--text-main);
+}
+
+/* CONTACT SECTION */
+.contact-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    max-width: 1000px;
+    margin: 0 auto;
+    align-items: flex-start;
+}
+
+.contact-info {
+    flex: 1;
+    min-width: 300px;
+}
+
+.info-box {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    box-shadow: var(--shadow-soft);
+    transition: transform 0.3s;
+}
+
+.info-box:hover {
+    transform: translateX(10px);
+}
+
+.info-box i {
+    font-size: 1.5rem;
+    color: white;
+    background: var(--primary-gradient);
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.info-box h4 {
+    margin-bottom: 5px;
+    color: var(--text-main);
+}
+
+.info-box p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.contact-form {
+    flex: 1.5;
+    min-width: 300px;
+    margin: 0;
+}
+
+/* ================= PASTE THIS AT THE BOTTOM OF STYLE.CSS ================= */
+
+/* 1. FIXED: HORIZONTAL SCROLL FOR INTERESTS */
+/* This replaces the grid layout with a smooth scroll layout */
+.interest-cards {
+    display: flex;
+    gap: 25px;
+    overflow-x: auto;
+    padding: 20px 0 40px 0;
+    scroll-behavior: smooth;
+    scrollbar-width: thin; /* Firefox */
+    -ms-overflow-style: none; /* IE/Edge */
+}
+
+/* Custom Scrollbar Styling */
+.interest-cards::-webkit-scrollbar {
+    height: 8px;
+}
+.interest-cards::-webkit-scrollbar-track {
+    background: transparent;
+}
+.interest-cards::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 10px;
+}
+
+.interest-card {
+    min-width: 280px; /* Ensures cards stay wide */
+    height: 380px;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: var(--shadow-soft);
+    transition: transform 0.3s;
+    flex-shrink: 0; /* Prevents cards from shrinking */
+    cursor: pointer;
+    text-decoration: none; /* Removes underline from links */
+}
+
+.interest-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+.interest-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.interest-card:hover img {
+    transform: scale(1.1);
+}
+
+.interest-card .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 25px;
+    background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+    color: white;
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+/* 2. ENHANCED CONTACT INPUTS */
+.contact-form {
+    padding: 40px;
+    background: white;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-main);
+    margin-bottom: 8px;
+    display: block;
+    letter-spacing: 0.5px;
+}
+
+/* Wrapper for Icon + Input */
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-icon {
+    position: absolute;
+    left: 15px;
+    color: #999;
+    transition: 0.3s;
+    z-index: 10;
+}
+
+.contact-form .form-control {
+    width: 100%;
+    padding: 15px 15px 15px 45px; /* Padding left makes room for the icon */
+    background: #f4f8fb;
+    border: 2px solid transparent;
+    border-radius: 12px;
+    font-size: 1rem;
+    color: #333;
+    transition: all 0.3s ease;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);
+}
+
+/* Textarea specific (No icon) */
+textarea.form-control {
+    padding: 15px;
+    resize: none;
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* Focus Effects */
+.contact-form .form-control:focus {
+    background: white;
+    border-color: #0061ff;
+    box-shadow: 0 0 0 4px rgba(0, 97, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+.contact-form .form-control:focus + .input-icon,
+.input-wrapper:focus-within .input-icon {
+    color: #0061ff;
+}
+
+/* ================= PASTE AT BOTTOM OF STYLE.CSS ================= */
+
+/* 1. STRICT IMAGE SIZING (Fixes uneven photos) */
+.interest-card {
+    min-width: 280px;
+    height: 380px;      /* Fixed Height for all cards */
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: var(--shadow-soft);
+    transition: transform 0.3s;
+    flex-shrink: 0;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.interest-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures image fills the box perfectly without stretching */
+    display: block;
+}
+
+/* 2. CUSTOM CONTACT BUTTON */
+.btn-contact {
+    width: 100%;
+    padding: 16px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #0061ff 0%, #60efff 100%); /* Vibrant Gradient */
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 20px rgba(0, 97, 255, 0.3); /* Glow Effect */
+}
+
+.btn-contact:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(0, 97, 255, 0.5); /* Stronger Glow on Hover */
+    background: linear-gradient(135deg, #0056e0 0%, #4aceff 100%);
+}
+
+.btn-contact:active {
+    transform: scale(0.98);
+}
+
+/* ================= UPDATES: SPACING & BUTTONS ================= */
+
+/* 1. INCREASED SPACING for Sections */
+.section-padding {
+    padding: 120px 5%; /* Increased from 80px to 120px for more gap */
+}
+
+/* 2. FIXED EXPLORE NOW BUTTON (Matches Contact Button) */
+.btn-search {
+    background: linear-gradient(135deg, #0061ff 0%, #60efff 100%);
+    color: white;
+    border: none;
+    padding: 16px 40px; /* Bigger touch area */
+    border-radius: 50px;
+    font-weight: 800; /* Bolder text */
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 25px rgba(0, 97, 255, 0.4); /* Strong Glow */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-search:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(0, 97, 255, 0.6);
+}

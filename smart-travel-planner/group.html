@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Group Budget</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="logo">SmartTravel.</div>
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="planner.html">Planner</a></li>
+        <li><a href="destinations.html">Destinations</a></li>
+        <li><a href="itinerary.html">Itinerary</a></li> <li><a href="group.html" style="color:#0061ff;">Group</a></li>
+    </ul>
+</nav>
+
+<section class="group-page">
+    <h2>💰 Group Budget Tracker</h2>
+
+    <div class="box">
+        <h3>1. Set Total Trip Budget</h3>
+        <div style="display:flex; gap:10px;">
+            <input type="number" id="budgetInput" placeholder="Total Budget (₹)">
+            <button class="btn" style="padding:10px 20px;" onclick="setBudget()">Set</button>
+        </div>
+    </div>
+
+    <div class="budget-summary" style="text-align: center;">
+        <h3 style="margin-bottom:15px;">Budget Overview</h3>
+
+        <div style="display:flex; justify-content:space-between; margin-bottom:5px;">
+            <span>Spent: ₹<span id="totalSpent">0</span></span>
+            <span>Total: ₹<span id="totalBudget">0</span></span>
+        </div>
+
+        <progress id="budgetProgress" value="0" max="100"></progress>
+
+        <h4 style="margin-top:15px;">Remaining: <span id="remaining" style="font-size:1.5rem; color:var(--teal-color);">₹0</span></h4>
+        <p style="color:gray;">Per Person Share: ₹<span id="perPerson">0</span></p>
+    </div>
+
+    <div class="box">
+        <h3>2. Group Members</h3>
+        <select id="memberCount" onchange="generateMemberInputs()">
+            <option value="">How many people?</option>
+            <option value="2">2 People</option>
+            <option value="3">3 People</option>
+            <option value="4">4 People</option>
+            <option value="5">5 People</option>
+        </select>
+        <div id="memberInputs" style="margin-top:15px;"></div>
+    </div>
+
+    <div class="box">
+        <h3>3. Add New Expense</h3>
+        <input type="text" placeholder="Expense Name (e.g. Dinner, Cab)">
+        <input type="number" id="expenseAmount" placeholder="Amount (₹)">
+        <button class="btn" style="width:100%;" onclick="addExpense()">➕ Add Expense</button>
+    </div>
+
+</section>
+<script src="script.js"></script>
+
+</body>
+</html>

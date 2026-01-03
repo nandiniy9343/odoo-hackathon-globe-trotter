@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Trip Planner</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="logo">SmartTravel.</div>
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="planner.html" style="color:#0061ff;">Planner</a></li>
+        <li><a href="destinations.html">Destinations</a></li>
+        <li><a href="itinerary.html">Itinerary</a></li> <li><a href="group.html">Group</a></li>
+    </ul>
+</nav>
+
+<section class="planner-section">
+    <h2>Design Your Perfect Trip</h2>
+    <p style="text-align:center; margin-bottom:30px; color:#666;">Fill in the details below to generate a custom itinerary.</p>
+
+    <form class="planner-form" oninput="budgetOutput.value = budgetRange.value">
+        <label>What kind of trip?</label>
+        <select id="planType">
+            <option value="Beach">🏖️ Beach Relaxation</option>
+            <option value="Mountain">🏔️ Mountain Retreat</option>
+            <option value="City">🏙️ City Exploration</option>
+            <option value="Adventure">🧗 Thrill & Adventure</option>
+        </select>
+
+        <label>Budget Limit (₹)</label>
+        <div style="display:flex; align-items:center; gap:15px;">
+            <input type="range" id="budgetRange" min="5000" max="100000" step="1000" value="20000">
+            <output name="budgetOutput" style="font-weight:bold; color:var(--teal-color); font-size:1.2rem;">20000</output>
+        </div>
+
+        <label>Duration (Days)</label>
+        <input type="number" id="planDays" min="1" max="30" placeholder="e.g. 5 days">
+
+        <label>Preferred Season</label>
+        <div class="radio-group" style="display:flex; gap:20px; margin-top:10px;">
+            <label><input type="radio" name="season" value="summer"> ☀️ Summer</label>
+            <label><input type="radio" name="season" value="winter"> ❄️ Winter</label>
+            <label><input type="radio" name="season" value="monsoon"> 🌧️ Monsoon</label>
+        </div>
+
+        <button type="button" class="btn" style="width:100%; margin-top:20px;" onclick="alert('Generating your AI Plan...')">✨ Generate Itinerary</button>
+    </form>
+</section>
+
+<script>
+    const params = new URLSearchParams(window.location.search);
+    if(params.has('type')) document.getElementById('planType').value = params.get('type');
+    if(params.has('budget')) {
+        document.getElementById('budgetRange').value = params.get('budget');
+        document.querySelector('output').value = params.get('budget');
+    }
+</script>
+
+</body>
+</html>
